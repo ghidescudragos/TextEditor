@@ -11,6 +11,7 @@ public class Main
 
         System.out.println("Selectati optiunea de editare dorita\n1.Eliminarea semnelor de punctuatiie");
         System.out.println("2.Inlocuirea unui caracter S cu un caracter C");
+        System.out.println("3.Eliminare numere");
         Scanner sc = new Scanner(System.in);
         int optiune = sc.nextInt();
         switch (optiune)
@@ -36,6 +37,15 @@ public class Main
                     if(strb.charAt(i)==S)
                     {
                         strb.setCharAt(i,C);
+                    }
+                }
+                break;
+            case 3:
+                for(int i=0;i<strb.length();i++)
+                {
+                    if(strb.charAt(i)<='9' && strb.charAt(i)>='0')
+                    {
+                        strb.delete(i,i+1);
                     }
                 }
                 break;
