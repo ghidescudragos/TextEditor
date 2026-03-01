@@ -6,9 +6,11 @@ public class Main
     {
         BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
         String sir = br.readLine();
-
+        Scanner input= new Scanner(System.in);
         StringBuffer strb = new StringBuffer(sir);
+
         System.out.println("Selectati optiunea de editare dorita\n1.Eliminarea semnelor de punctuatiie");
+        System.out.println("2.Inlocuirea unui caracter S cu un caracter C");
         Scanner sc = new Scanner(System.in);
         int optiune = sc.nextInt();
         switch (optiune)
@@ -23,6 +25,19 @@ public class Main
                     }
                 }
 
+                break;
+            case 2:
+                System.out.print("S:");
+                char S = input.next("[a-zA-Z]").charAt(0);
+                System.out.print("C:");
+                char C = input.next("[a-zA-Z]").charAt(0);
+                for(int i=0;i<strb.length();i++)
+                {
+                    if(strb.charAt(i)==S)
+                    {
+                        strb.setCharAt(i,C);
+                    }
+                }
                 break;
             default:
 
